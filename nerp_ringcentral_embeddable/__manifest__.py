@@ -17,6 +17,7 @@
     'depends': [
         'base',
         'portal',
+	'utm',
     ],
     'description': """RingCentral Embeddable""",
     'data': [
