@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="callback">
+        <html>
+            <body>
+                <script type="text/javascript"
+                        src="/nerp_voip_ringcentral/static/lib/ringcentral-web-phone.js"></script>
+                <script type="text/javascript" src="/nerp_voip_ringcentral/static/lib/nerp-ringcentral.js"></script>
+
+                <script type="text/javascript" src="/nerp_voip_ringcentral/static/src/js/callback.js"></script>
+            </body>
+        </html>
+    </template>
+</odoo>
+

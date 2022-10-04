@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ringcentral_user_tree" model="ir.ui.view">
+        <field name="name">ringcentral.user.tree</field>
+        <field name="model">ringcentral.user</field>
+        <field name="arch" type="xml">
+            <tree string="RingCentral User">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="user_type"/>
+                <field name="extension_id"/>
+                <field name="extension_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ringcentral_user_form" model="ir.ui.view">
+        <field name="name">ringcentral.user.form</field>
+        <field name="model">ringcentral.user</field>
+        <field name="arch" type="xml">
+            <form string="RingCentral User">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="User Name" required="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="User Information">
+                            <field name="user_type"/>
+                            <field name="phone"/>
+                            <field name="extension_id"/>
+                            <field name="extension_number"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="ringcentral_user_filter" model="ir.ui.view">
+        <field name="name">ringcentral.user.search</field>
+        <field name="model">ringcentral.user</field>
+        <field name="arch" type="xml">
+            <search string="RingCentral User">
+                <field name="name" string="Name"/>
+                <field name="phone" string="Phone"/>
+                <field name="extension_id" string="Extension Id"/>
+                <separator/>
+                <filter string="Employees" domain="[('user_type', '=', 'internal')]" name="ringcentral_internal_user_filter"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ringcentral_user" model="ir.actions.act_window">
+        <field name="name">RingCentral User</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ringcentral.user</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="ringcentral_user_filter"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                This menu displays RingCentral User in phonebook
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_ringcentral_user" name="RingCentral User" action="action_ringcentral_user" parent="menu_ringcentral_root" sequence="2"/>
+</odoo>

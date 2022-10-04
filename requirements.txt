@@ -1,0 +1,9 @@
+PyJWT==1.7.1
+plaid-python==3.4.0
+stripe==2.35.1
+polib==1.1.0
+zeep==3.4.0
+bigcommerce
+phonenumbers==8.12.6
+ringcentral==0.7.11
+google-auth==1.32.1

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top menu item -->
+    <menuitem id="menu_ringcentral_root" name="RingCentral" web_icon="nerp_ringcentral_embeddable,static/description/icon.png" sequence="2"/>
+
+</odoo>

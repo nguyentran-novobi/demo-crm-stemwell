@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="extended_backend_layout" inherit_id="web.layout">
+        <xpath expr="body" position="inside">
+            <video id="remoteVideo" hidden="hidden"></video>
+            <video id="localVideo" hidden="hidden" muted="muted"></video>
+        </xpath>
+    </template>
+</odoo>

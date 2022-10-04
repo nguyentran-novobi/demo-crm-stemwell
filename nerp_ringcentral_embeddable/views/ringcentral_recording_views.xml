@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ringcentral_recording_tree" model="ir.ui.view">
+        <field name="name">ringcentral.recording.tree</field>
+        <field name="model">ringcentral.recording</field>
+        <field name="arch" type="xml">
+            <tree string="RingCentral Recording">
+                <field name="name"/>
+                <field name="from_user_id"/>
+                <field name="to_user_id"/>
+                <field name="duration"/>
+                <field name="start_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ringcentral_recording_form" model="ir.ui.view">
+        <field name="name">ringcentral.recording.form</field>
+        <field name="model">ringcentral.recording</field>
+        <field name="arch" type="xml">
+            <form string="RingCentral Recording">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Recording Name" require="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Recording Information">
+                            <field name="content_url" invisible="1"/>
+                            <field name="content_type"/>
+                            <field name="content" filename="filename"/>
+                            <field name="filename" invisible="1"/>
+                            <field name="duration"/>
+                        </group>
+                        <group string="Related Information">
+                            <field name="call_id"/>
+                            <field name="start_time"/>
+                            <field name="from_user_id"/>
+                            <field name="to_user_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="ringcentral_recording_filter" model="ir.ui.view">
+        <field name="name">ringcentral.recording.search</field>
+        <field name="model">ringcentral.recording</field>
+        <field name="arch" type="xml">
+            <search string="RingCentral Recording">
+                <field name="name" string="Name"/>
+                <field name="call_id" string="Call Log"/>
+                <field name="call_id" string="Call Log"/>
+                <field name="from_user_id" string="From User"/>
+                <field name="to_user_id" string="To User"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ringcentral_recording" model="ir.actions.act_window">
+        <field name="name">RingCentral Recording</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ringcentral.recording</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="ringcentral_recording_filter"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                This menu displays RingCentral Recording of the call logs
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_ringcentral_recording" name="RingCentral Recording" action="action_ringcentral_recording" parent="menu_ringcentral_root" sequence="3"/>
+</odoo>

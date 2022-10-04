@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_ringcentral_backend" name="RingCentral Assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <!-- Sandbox-->
+            <!-- <script type="text/javascript" src="https://ringcentral.github.io/ringcentral-web-widget/adapter.js?appServer=https://platform.devtest.ringcentral.com"></script> -->
+            <!-- Prod-->
+            <script type="text/javascript" src="https://ringcentral.github.io/ringcentral-web-widget/adapter.js"></script>
+        </xpath>
+    </template>
+</odoo>

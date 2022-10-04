@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ringcentral_call_log_tree" model="ir.ui.view">
+        <field name="name">ringcentral.call.log.tree</field>
+        <field name="model">ringcentral.call.log</field>
+        <field name="arch" type="xml">
+            <tree string="RingCentral Call Log" decoration-muted="direction=='Missed'">
+                <field name="name"/>
+                <field name="from_user_id"/>
+                <field name="to_user_id"/>
+                <field name="start_time"/>
+                <field name="duration"/>
+                <field name="direction"/>
+                <field name="result"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ringcentral_call_log_form" model="ir.ui.view">
+        <field name="name">ringcentral.call.log.form</field>
+        <field name="model">ringcentral.call.log</field>
+        <field name="arch" type="xml">
+            <form string="RingCentral Call Log">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Call Log Name" required="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Call Log Information">
+                            <field name="from_user_id"/>
+                            <field name="to_user_id"/>
+                            <field name="start_time"/>
+                        </group>
+                        <group string="Call Log Status">
+                            <field name="call_type"/>
+                            <field name="direction"/>
+                            <field name="action"/>
+                            <field name="result"/>
+                            <field name="ringcentral_call_log_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="ringcentral_call_log_filter" model="ir.ui.view">
+        <field name="name">ringcentral.call.log.search</field>
+        <field name="model">ringcentral.call.log</field>
+        <field name="arch" type="xml">
+            <search string="Search Call Log">
+                <field name="from_user_id" string="From User"/>
+                <field name="to_user_id" string="To User"/>
+                <field name="name" string="Call Log Name"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="From User" name="from_user_id" domain="[]" context="{'group_by':'from_user_id'}"/>
+                    <filter string="To User" name="to_user_id" domain="[]" context="{'group_by':'to_user_id'}"/>
+                    <filter string="Direction" name="direction" domain="[]" context="{'group_by':'direction'}"/>
+                    <filter string="Result" name="result" domain="[]" context="{'group_by':'result'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ringcentral_call_log" model="ir.actions.act_window">
+        <field name="name">RingCentral Call Log</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ringcentral.call.log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="ringcentral_call_log_filter"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                This menu displays RingCentral Call Log of the company
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_ringcentral_call_log" name="RingCentral Call Log" action="action_ringcentral_call_log" parent="menu_ringcentral_root" sequence="1"/>
+</odoo>

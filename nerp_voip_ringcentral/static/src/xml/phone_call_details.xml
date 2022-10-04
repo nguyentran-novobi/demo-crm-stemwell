@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!--
+        @param {string} widget.phoneNumber
+    -->
+    <div
+        t-name="nerp_voip_ringcentral.PhoneCallDetails" class="phone-details">
+<!--        <div>-->
+<!--            <i-->
+<!--                aria-label="Phonecall details"-->
+<!--                class="-->
+<!--                    fa-->
+<!--                    fa-2x-->
+<!--                    fa-angle-left-->
+<!--                    mb8-->
+<!--                    mt8-->
+<!--                    o_phonecall_details_close-->
+<!--                    text-primary"-->
+<!--                role="img"-->
+<!--                title="Phonecall details"/>-->
+<!--        </div>-->
+        <div
+            class="o_phonecall_details" style="height: 200px">
+            <div
+                class="
+                    o_phonecall_info
+                    row
+                    text-center" style="padding-top:20px">
+                <div class="col-lg-12">
+                    <div t-if="widget.phoneNumber"><a href="#" class="o_dial_call_number"><t t-esc="widget.phoneNumber"/></a><br/></div>
+                </div>
+                <div class="col-lg-12">
+                    <p id='ringcentral_call_status' class="o_dial_call_number"></p>
+                </div>
+                <div class="col-lg-12">
+                    <p id="ringcentral_call_timer" class="o_dial_call_number"></p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="o_dial_keypad_button_container" style="position: relative;">
+            <div class="o_voip_row_header">Document</div>
+            <div
+                class="o_row">
+                <div
+                    class="
+                        o_dial_keypad_button_small
+                        text-center"
+                    title="Customer">
+                    <a
+                        class="o_dial_to_partner"
+                        href="#">
+                        <i
+                            aria-label="Customer"
+                            class="
+                                fa
+                                fa-2x
+                                fa-user"/>
+                    </a>
+                </div>
+            </div>
+            <div class="o_phonecall_in_call">
+                <div class="o_voip_row_header">Call</div>
+                <div class="o_row" style=" display: flex;  align-items: center;  justify-content: center;">
+                    <div
+                        class="
+                            col-6
+                            o_dial_keypad_button_small
+                            text-center">
+                        <button
+                            aria-label="Mute"
+                            class="
+                                o_dial_keypad_button
+                                o_dial_mute_button"
+                            title="Mute">
+                            <i
+                                class="
+                                    fa
+                                    fa-2x
+                                    fa-microphone"/>
+                        </button>
+                    </div>
+                    <div
+                        class="
+                            col-6
+                            o_dial_keypad_button_small
+                            text-center">
+                        <button
+                            aria-label="Mute"
+                            class="
+                                o_dial_keypad_button
+                                o_dial_rec_button"
+                            title="Mute">
+                            <i
+                                class="
+                                    fa
+                                    fa-2x
+                                    fa-circle"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        @param {string} [duration] mandatory with status 'in_call'
+        @param {string} status ['ringing', 'connecting', 'in_call']
+    -->
+    <t t-name="voip.PhoneCallStatus">
+        <t t-if="status === 'ringing'">
+            <p>Ringing...</p>
+        </t>
+        <t t-elif="status === 'connecting'">
+            <p>Connecting...</p>
+        </t>
+        <t t-elif="status === 'in_call'">
+            <p>In call for:</p>
+            <p><t t-esc="duration"/></p>
+        </t>
+    </t>
+
+</templates>

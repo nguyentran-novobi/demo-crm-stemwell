@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<li
+        t-name="nerp_voip_ringcentral.switch_panel_top_button">
+
+    <video id="remoteVideo" hidden="hidden"></video>
+    <video id="localVideo" hidden="hidden" muted="muted"></video>
+    <a
+            href="#"
+            title="Display Dialing Panel">
+        <i
+                aria-label="Display Dialing Panel"
+                class="
+                fa
+                fa-fw
+                fa-phone"
+                role="img"/>
+    </a>
+</li>
+
+    <!--
+        @param {voip.dialingPanel} widget
+    -->
+    <div
+            class="
+        o_dial
+        o_in_home_menu"
+            t-name="nerp_voip_ringcentral.DialingPanel">
+        <div
+                class="o_dial_fold">
+        <div
+                class="o_dial_window_title">
+            <t t-call="nerp_voip_ringcentral.DialingPanel.HeaderContent">
+                <a t-set="title" t-value="widget.title"/>
+            </t>
+        </div>
+    </div>
+        <div class="
+        o_dial_panel
+        o_form_view
+        tab-content">
+        <div
+                class="o_dial_keypad">
+        <div
+                class="o_dial_keypad_input_div">
+            <input
+                    class="o_dial_keypad_input"
+                    placeholder="Enter the number..."/>
+            <div
+                    aria-label="Backspace"
+                    class="
+                    fa
+                    fa-long-arrow-left
+                    o_dial_keypad_backspace"
+                    role="img"
+                    title="Backspace"/>
+        </div>
+            <div
+                    class="
+                clearfix
+                mt16
+                mb16
+                o_dial_keypad_buttons">
+            <button
+                    class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">1</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">2</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">3</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">4</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">5</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">6</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">7</button>
+                <button
+                        class="
+                    o_dial_number
+                    o_dial_keypad_button
+                    text-primary">8</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">9</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">*</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">0</button>
+                <button
+                        class="
+                    o_dial_keypad_button
+                    o_dial_number
+                    text-primary">#</button>
+        </div>
+    </div>
+    </div>
+        <div
+                class="
+            o_dial_buttons
+            o_dial_main_buttons" style=" display: flex;  align-items: center;  justify-content: center;">
+            <button
+                    aria-label="Keypad"
+                    class="
+                o_dial_keypad_button
+                o_dial_keypad_icon
+                text-gray-light"
+                    title="Keypad" style="padding-right: 30%; display: none;"><i
+                class="
+                    fa
+                    fa-keyboard-o"/></button>
+            <button
+                    aria-label="Call"
+                    class="
+                o_dial_call_button"
+                    title="Call"><i
+                class="
+                    fa
+                    fa-phone"/></button>
+    </div>
+</div>
+
+    <!--
+      header of the voip_widget
+      takes a value title as parameter that is a String and will be the title of the header.
+
+      @param {string} title
+    -->
+    <t t-name="nerp_voip_ringcentral.DialingPanel.HeaderContent">
+    <i
+            class="
+            fa
+            fa-fw
+            fa-phone"
+            role="img"/>
+        <div
+                class="o_dial_text">
+            <t t-esc="title"/>
+    </div>
+        <a
+                aria-label="Close"
+                class="
+            fa
+            fa-close
+            o_dial_window_close"
+                href="#"
+                title="Close"/>
+        <i
+                aria-label="Unfold"
+                class="
+            fa
+            fa-2x
+            fa-angle-up
+            o_dial_unfold fa_mt"
+                role="img"
+                title="Unfold"/>
+</t>
+
+</templates>

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ringcentral_call_log_user,ringcentral.call.log.user,nerp_ringcentral_embeddable.model_ringcentral_call_log,base.group_user,1,1,1,1
+access_ringcentral_call_log_public,ringcentral.call.log.public,nerp_ringcentral_embeddable.model_ringcentral_call_log,,1,1,1,0
+access_ringcentral_user_user,ringcentral.user.user,nerp_ringcentral_embeddable.model_ringcentral_user,base.group_user,1,1,1,1
+access_ringcentral_user_public,ringcentral.user.public,nerp_ringcentral_embeddable.model_ringcentral_user,,1,1,1,0
+access_ringcentral_recording_user,ringcentral.recording.user,nerp_ringcentral_embeddable.model_ringcentral_recording,base.group_user,1,1,1,1
+access_ringcentral_recording_public,ringcentral.recording.public,nerp_ringcentral_embeddable.model_ringcentral_recording,,1,1,1,0

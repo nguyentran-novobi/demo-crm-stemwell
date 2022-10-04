@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="rc_client_id" model="ir.config_parameter">
+            <field name="key">rc._client_id</field>
+            <field name="value">tT2gvd0-QoW5uvTKRhAHdQ</field>
+        </record>
+        <record id="rc_client_secret" model="ir.config_parameter">
+            <field name="key">rc._client_secret</field>
+            <field name="value">0D5ly4gBQ9a1fbsG2ksViQQ34OE0D3RpuRYbXf0_OrjA</field>
+        </record>
+        <record id="rc_api_server" model="ir.config_parameter">
+            <field name="key">rc._api_server</field>
+            <field name="value">https://platform.devtest.ringcentral.com</field>
+        </record>
+    </data>
+</odoo>
